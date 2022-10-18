@@ -153,7 +153,8 @@ public class Spawner : MonoBehaviour
         var v2 = 1.0f - Random.value;
         
         var standard = Math.Sqrt(-2.0f * Math.Log(v1)) * Math.Sin(2.0f * Math.PI * v2);
-        
+        if (standard > 1.5) standard = 1.5;
+        if (standard < -1.5) standard = 1.5;
         return (float)(mean + std * standard);
     }
     
