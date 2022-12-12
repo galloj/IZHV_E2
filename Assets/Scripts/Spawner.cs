@@ -99,6 +99,9 @@ public class Spawner : MonoBehaviour
         
         // Move the obstacle into the correct layer.
         obstacle.layer = LayerMask.NameToLayer(spawnLayer);
+
+        // set the obstacle to nice random color
+        obstacle.transform.Find("Mask").GetComponent<SpriteRenderer>().color = Random.ColorHSV(0, 1, 1, 1, 1, 1);
     }
 
     /// <summary>

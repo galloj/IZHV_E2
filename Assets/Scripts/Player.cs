@@ -144,6 +144,14 @@ public class Player : MonoBehaviour
             ) * axisDirection);
             mSwitchedGravity = true;
         }
+        mRB.position += new Vector2(horizontalMovement, 0) * Time.deltaTime * 2;
+        if(!IsOnGround())
+        {
+            mSpriteRenderer.sprite = spritePog;
+        } else
+        {
+            mSpriteRenderer.sprite = spriteNeutral;
+        }
     }
 
     /// <summary>
